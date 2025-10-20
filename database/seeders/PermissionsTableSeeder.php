@@ -74,6 +74,42 @@ class PermissionsTableSeeder extends Seeder
             ]);
         }
 
+
+        // Parametros
+        $permissions = [
+            'browse_branches' => 'Ver lista de sucursales',
+            'read_branches' => 'Ver detalles de una sucursales',
+            'edit_branches' => 'Editar información de sucursales',
+            'add_branches' => 'Agregar nuevas sucursales',
+            'delete_branches' => 'Eliminar sucursales',
+        ];
+
+        foreach ($permissions as $key => $description) {
+            Permission::firstOrCreate([
+                'key'        => $key,
+                'keyDescription'=> $description,
+                'table_name' => 'branches',
+                'tableDescription'=>'Sucursales'
+            ]);
+        }
+
+        $permissions = [
+            'browse_presentations' => 'Ver lista de presentacion de productos',
+            'read_presentations' => 'Ver detalles de una presentacion de productos',
+            'edit_presentations' => 'Editar información de presentacion de productos',
+            'add_presentations' => 'Agregar nuevas presentacion de productos',
+            'delete_presentations' => 'Eliminar presentacion de productos',
+        ];
+
+        foreach ($permissions as $key => $description) {
+            Permission::firstOrCreate([
+                'key'        => $key,
+                'keyDescription'=> $description,
+                'table_name' => 'presentations',
+                'tableDescription'=>'Presentacion de Productos'
+            ]);
+        }
+
      
 
 

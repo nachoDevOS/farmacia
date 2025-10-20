@@ -59,6 +59,7 @@ class UserController extends Controller
                 'email' => $request->email,
                 'avatar' => 'users/default.png',
                 'password' => bcrypt($request->password),
+                'branch_id'=> $request->branch_id
                 // 'settings' => '{"locale":"es"}'
 
             ]);
