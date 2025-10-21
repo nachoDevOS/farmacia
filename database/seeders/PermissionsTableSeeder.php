@@ -110,6 +110,40 @@ class PermissionsTableSeeder extends Seeder
             ]);
         }
 
+        $permissions = [
+            'browse_lines' => 'Ver lista de lineas',
+            'read_lines' => 'Ver detalles de una lineas',
+            'edit_lines' => 'Editar información de lineas',
+            'add_lines' => 'Agregar nuevas lineas',
+            'delete_lines' => 'Eliminar lineas',
+        ];
+
+        foreach ($permissions as $key => $description) {
+            Permission::firstOrCreate([
+                'key'        => $key,
+                'keyDescription'=> $description,
+                'table_name' => 'lines',
+                'tableDescription'=>'Lineas'
+            ]);
+        }
+
+        $permissions = [
+            'browse_laboratories' => 'Ver lista de laboratorios',
+            'read_laboratories' => 'Ver detalles de una laboratorios',
+            'edit_laboratories' => 'Editar información de laboratorios',
+            'add_laboratories' => 'Agregar nuevas laboratorios',
+            'delete_laboratories' => 'Eliminar laboratorios',
+        ];
+
+        foreach ($permissions as $key => $description) {
+            Permission::firstOrCreate([
+                'key'        => $key,
+                'keyDescription'=> $description,
+                'table_name' => 'laboratories',
+                'tableDescription'=>'Laboratorios'
+            ]);
+        }
+
      
 
 
