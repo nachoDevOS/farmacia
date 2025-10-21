@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\RegistersUserEvents;
 
-class Presentation extends Model
+class Line extends Model
 {
     use HasFactory, RegistersUserEvents, SoftDeletes;
 
@@ -16,6 +16,7 @@ class Presentation extends Model
     protected $fillable = [
         'name',
         'observation',
+        'image',
         'status',
 
         'registerUser_id',
@@ -25,8 +26,4 @@ class Presentation extends Model
         'deleteRole',
         'deleteObservation',
     ];
-
-    // protected $rules = [
-    //     'name' => 'required|max:191|unique:tu_tabla'
-    // ];
 }
